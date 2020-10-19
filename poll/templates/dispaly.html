@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+<input type="search" id="search" name="search" placeholder="Search" >
+    <input type="submit" value="Submit">
+</form>
+{% if result %}
+<ul>
+   {% for i in result %}
+    <li>{{i.title}}</li>
+    <li>{{i.name}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
